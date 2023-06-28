@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "iVolley",
+  "backgroundTextStyle": "light",
+  "component": true,
+  "usingComponents": {
+    "t-divider": "tdesign-miniprogram/divider/divider",
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-date-time-picker": "tdesign-miniprogram/date-time-picker/date-time-picker",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-button": "tdesign-miniprogram/button/button"
+  }
+}

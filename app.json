@@ -1,14 +1,18 @@
 {
-  "pages":[
+  "pages": [
+    "pages/teachers/teacher_home/teacher_home",
+    "pages/teachers/teacher_home/teacher_class/teacher_class",
+    "pages/teachers/teacher_home/teacher_create_task/teacher_create_task",
+    "pages/teachers/teacher_person_center/teacher_person_center",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/teachers/teacher_home/teacher_class/teacher_class_task/teacher_class_task"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

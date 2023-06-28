@@ -1,0 +1,49 @@
+<!--pages/teachers/teacher_home/teacher_create_task/teacher_create_task.wxml-->
+<view class="root">
+  <view class="nav" style="font-size: 42rpx; font-weight: 600; text-align: center;">
+    <text>作业发布</text>
+  </view>
+  <view class="title">
+    <t-input label="题目" placeholder="请输入文字"></t-input>
+  </view>
+  <view class="content">
+    <t-textarea t-class="external-class" label="具体要求" placeholder="请输入文字" disableDefaultPadding="{{true}}" />
+  </view>
+  <view class="time">
+    <t-cell
+  title="请选择截止日期"
+  hover
+  note="{{datetimeText}}"
+  arrow
+  data-mode="datetime"
+  bindtap="showPicker"
+  t-class="pannel-item"
+/>
+
+<!-- 年月日时分 -->
+<t-date-time-picker
+  title="请选择截止日期"
+  visible="{{datetimeVisible}}"
+  mode="second"
+  value="{{datetime}}"
+  format="YYYY-MM-DD HH:mm:ss"
+  bindchange="onConfirm"
+  bindpick="onColumnChange"
+  bindcancel="hidePicker"
+/>
+  </view>
+  <view>
+    <t-cell
+  title="请选择发布的班级"
+  hover
+  note="{{datetimeText}}"
+  arrow
+  data-mode="datetime"
+  bindtap="showPicker"
+  t-class="pannel-item"
+/>
+  </view>
+  <view class="bottom" style="display: flex; align-items: center;justify-content: center; position: fixed;bottom: 50px;z-index: 1;width: 95%;">
+    <t-button theme="primary" size="large" variant="outline">发布作业</t-button>
+</view>
+</view>

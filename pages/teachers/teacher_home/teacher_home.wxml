@@ -1,0 +1,54 @@
+<!--pages/teachers/teacher_home/teacher_home.wxml-->
+<view class="root" style="background-color: rgb(239, 245, 245); ">
+    <view style="background-color: white; margin: 10rpx;">
+    <t-row>
+    <t-col span="8" offset="8">
+      <text style="font-size: 42rpx; font-weight: 600;">班级管理</text>
+    </t-col>
+    <t-col span="4" offset="4">
+      <t-button theme="light" icon="add" shape="square" size="small"    bind:tap="onDrawerDisplay"></t-button>
+    </t-col>
+    </t-row>
+    </view>
+  <view style="width: 90%; display: flex; margin-left: 5%; margin-bottom: 50rpx;">
+    <t-cell class="mb-16" title="请选择学期" arrow hover note="{{semesterText}}" bind:click="onSemesterPicker" />
+    <t-picker
+    visible="{{semesterVisible}}"
+    value="{{semesterValue}}"
+    data-key="semester"
+    title="选择学期"
+    cancelBtn="取消"
+    confirmBtn="确认"
+    bindchange="onPickerChange"
+    bindpick="onColumnChange"
+    bindcancel="onPickerCancel"
+  >
+    <t-picker-item options="{{semesters}}" />
+  </t-picker>
+
+    <t-tab-bar value="{{value}}" bindchange="onChangeBar" theme="tag" split="{{false}}">
+    <t-tab-bar-item wx:for="{{list}}" wx:key="index" value="{{item.value}}" icon="{{item.icon}}">
+      {{item.label}}
+    </t-tab-bar-item>
+  </t-tab-bar>
+  </view>
+  <view style="padding: 10rpx;">
+    <t-cell-group theme="card">
+      <t-cell title="周一下午" leftIcon="usergroup" hover arrow style="margin: 10rpx;"/>
+      <t-cell title="周二下午" leftIcon="usergroup" hover arrow style="margin: 10rpx;"/>
+      <t-cell title="周三下午" leftIcon="usergroup" hover arrow style="margin: 10rpx;"/>
+      <t-cell title="图片测试" leftIcon="usergroup" hover arrow style="margin: 10rpx;"
+      bind:tap="gotoClass"/>
+    </t-cell-group>
+  </view>
+</view>
+<t-message id="t-message" />
+<t-drawer
+  visible="{{drawerVisible}}"
+  placement="{{placement}}"
+  items="{{sidebar}}"
+  bind:overlay-click="overlayClick"
+  bind:item-click="itemClick"
+  title=" "
+  z-index="11700"
+></t-drawer>
