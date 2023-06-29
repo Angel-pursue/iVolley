@@ -1,5 +1,10 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/personinfo/personinfo",
+    "pages/video/video",
+    "pages/videoPlayer/videoPlayer",
+    "pages/showvideos/showvideos",
     "pages/teachers/teacher_home/teacher_home",
     "pages/teachers/teacher_home/teacher_class/teacher_class",
     "pages/teachers/teacher_home/teacher_create_task/teacher_create_task",
