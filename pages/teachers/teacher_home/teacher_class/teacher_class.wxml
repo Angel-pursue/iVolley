@@ -1,0 +1,33 @@
+<!--pages/teachers/teacher_home/teacher_create_task/teacher_create_task.wxml-->
+<view class="root">
+  <view class="nav" style="font-size: 42rpx; font-weight: 600; text-align: center;">
+    <text>周一下午</text>
+  </view>
+  <view class="task" style="font-size: 35rpx;">
+    <text style="margin: 10rpx;">已发布作业</text>
+    <t-cell-group theme="card">
+    <t-cell title="期中考试"  hover arrow style="margin: 10rpx;"/>
+      <t-cell title="期末考试"  hover arrow style="margin: 10rpx;"/>
+      <t-cell title="课下练习"  hover arrow style="margin: 10rpx;"/>
+      <t-cell title="自垫球"  hover arrow style="margin: 10rpx;"
+      bind:click="gotoTask"/>
+    </t-cell-group>
+    </view>
+    <view class="divider-demo__title"></view>
+    <t-collapse value="{{activeValues}}" bind:change="handleChange">
+    <t-collapse-panel header="学生名单" value="{{0}}" expandIcon>
+      <t-row gutter="16">
+      <t-col span="8" t-class="dark" offset="4">姓名</t-col>
+      <t-col span="8" t-class="light">学号</t-col>
+      </t-row>
+      <t-row gutter="16">
+      <t-col span="8" t-class="dark" offset="4">赵铁柱</t-col>
+      <t-col span="8" t-class="light">20373566</t-col>
+      </t-row>
+      <t-row gutter="16">
+      <t-col span="8" t-class="dark" offset="4">王大壮</t-col>
+      <t-col span="8" t-class="light">20373577</t-col>
+      </t-row>
+    </t-collapse-panel>
+  </t-collapse>
+</view>

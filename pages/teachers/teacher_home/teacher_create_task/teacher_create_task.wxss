@@ -1,0 +1,8 @@
+/* pages/teachers/teacher_home/teacher_create_task/teacher_create_task.wxss */
+.external-class {
+  height: 256rpx;
+}
+
+.pannel-item {
+  margin-bottom: 32rpx;
+}

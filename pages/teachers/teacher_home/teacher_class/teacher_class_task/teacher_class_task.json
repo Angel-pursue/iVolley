@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "iVolley",
+  "backgroundTextStyle": "light",
+  "component": true,
+  "usingComponents": {
+    "t-image": "tdesign-miniprogram/image/image"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-user-center-card": "./components/user-center-card/index",
+    "t-toast": "tdesign-miniprogram/toast/toast",
+    "t-badge": "tdesign-miniprogram/badge/badge",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
+    "t-tab-bar-item": "tdesign-miniprogram/tab-bar-item/tab-bar-item"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,15 @@
+<!--pages/teachers/teacher_home/teacher_class/teacher_class_task/teacher_class_task.wxml-->
+<view class="root">
+  <view class="video" style="margin-left: 15rpx; margin-right: 15rpx; font-size: 40rpx;">
+    <text >学生视频</text>
+    <video bindplay= 'playVideo' bindpause='pauseVideo' src="{{videoUrl}}" binderror="error" style="width: 100%; margin-top: 15rpx" />
+  </view>
+  <view class="video" style="margin-left: 15rpx; margin-right: 15rpx; font-size: 40rpx;">
+    <text >学生图片</text>
+    <image  src="{{imageUrl}}" style="width: 100%; margin-top: 15rpx" mode="aspectFit"/>
+  </view>
+  <view class="video" style="margin-left: 15rpx; margin-right: 15rpx; font-size: 40rpx;">
+    <text >AI评价</text>
+    <image  src="{{imageUrls}}" style="width: 100%; margin-top: 15rpx" mode="aspectFit"/>
+  </view>
+</view>

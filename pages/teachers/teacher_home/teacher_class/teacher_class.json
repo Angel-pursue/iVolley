@@ -1,0 +1,23 @@
+{
+  "navigationBarTitleText": "iVolley",
+  "backgroundTextStyle": "light",
+  "component": true,
+  "usingComponents": {
+    "t-divider": "tdesign-miniprogram/divider/divider",
+    "t-collapse": "tdesign-miniprogram/collapse/collapse",
+    "t-collapse-panel": "tdesign-miniprogram/collapse-panel/collapse-panel",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-message": "tdesign-miniprogram/message/message",
+    "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-picker": "tdesign-miniprogram/picker/picker",
+    "t-picker-item": "tdesign-miniprogram/picker-item/picker-item",
+    "t-row": "tdesign-miniprogram/row/row",
+    "t-col": "tdesign-miniprogram/col/col",
+    "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
+    "t-tab-bar-item": "tdesign-miniprogram/tab-bar-item/tab-bar-item",
+    "t-drawer": "tdesign-miniprogram/drawer/drawer",
+    "t-button": "tdesign-miniprogram/button/button"
+  }
+}
