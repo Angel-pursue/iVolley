@@ -41,6 +41,9 @@
       bind:tap="gotoClass"/>
     </t-cell-group>
   </view>
+  <view class="wrapper">
+    <t-button bind:tap="upLoad">测试上传</t-button>
+  </view>
 </view>
 <t-message id="t-message" />
 <t-drawer

@@ -3,6 +3,7 @@
   "backgroundTextStyle": "light",
   "component": true,
   "usingComponents": {
+    "t-upload": "tdesign-miniprogram/upload/upload",
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-navbar": "tdesign-miniprogram/navbar/navbar",
     "t-message": "tdesign-miniprogram/message/message",

@@ -30,6 +30,7 @@ Page({
       { value: 'label_1', label: '班级管理', icon: 'home' },
       { value: 'label_4', label: '个人中心', icon: 'user' },
     ],
+    image: ''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -153,5 +154,32 @@ Page({
     wx.navigateTo({
       url: './teacher_class/teacher_class',
     })
+  },
+
+  upLoad() {
+    console.log('begin upload')
+    wx.chooseMedia({
+      count: 1,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res) => {
+        console.log(res);
+        const path = res.tempFiles[0].tempFilePath;
+        wx.uploadFile({
+          url: 'http://10.134.138.253:8002/iVolley_api/storage_view/', 
+          filePath: path,
+          name: "image",
+          formData: {
+          },
+          header: {
+            'content-type': 'multipart/form-data'
+          },
+          success (res){
+            console.log(res)
+          },
+          fail: (err) => console.log(err),
+      });
+    }
+  });
   }
 })
