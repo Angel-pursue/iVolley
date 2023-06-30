@@ -53,6 +53,7 @@ Page({
     this.passWord = e.detail.value;
   },
   clickMe: function() {
+    var that = this
     if(this.data.current == 1) {
       console.log(this.logstaus)
       console.log(this.email)
@@ -76,7 +77,8 @@ Page({
               icon: 'success',
               title: '登录成功',
             })
-            if (this.logstaus == 1) {
+            console.log(that.logstaus)
+            if (that.logstaus) {
               wx.navigateTo({
                 url: '../teachers/teacher_home/teacher_home',
               })

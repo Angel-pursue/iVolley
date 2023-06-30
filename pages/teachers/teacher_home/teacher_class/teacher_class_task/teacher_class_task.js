@@ -10,7 +10,7 @@ Page({
     videoUrl: '',
     imageUrl: '',
     AI_feedback: '暂无评价',
-    teacher_feedback: '暂无评价'
+    teacher_feedback: '暂无评价',
   },
 
   /**
@@ -104,5 +104,6 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+  
 })

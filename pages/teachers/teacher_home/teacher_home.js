@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '陆',
+    name: '彭',
     drawerVisible: false,
     placement: 'right',
     sidebar: [
