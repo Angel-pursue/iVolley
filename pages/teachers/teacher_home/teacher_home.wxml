@@ -37,7 +37,7 @@
       <t-cell title="周一下午" leftIcon="usergroup" hover arrow style="margin: 10rpx;"/>
       <t-cell title="周二下午" leftIcon="usergroup" hover arrow style="margin: 10rpx;"/>
       <t-cell title="周三下午" leftIcon="usergroup" hover arrow style="margin: 10rpx;"/>
-      <t-cell title="测试" leftIcon="usergroup" hover arrow style="margin: 10rpx;"
+      <t-cell title="全体学生" leftIcon="usergroup" hover arrow style="margin: 10rpx;"
       bind:tap="gotoClass"/>
     </t-cell-group>
   </view>

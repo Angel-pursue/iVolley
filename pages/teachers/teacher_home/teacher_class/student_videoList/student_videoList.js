@@ -33,6 +33,9 @@ Page({
         for (var i = 0; i < res.data.videos.length; i++) {
           var item = res.data.videos[i]
           item.index = i
+          item.subtime = item.subtime.substring(0,10)
+          item.AI_status = item.AI_status == 0 ? 'AI检测中' : 'AI检测完成'
+          item.teacher_status = item.teacher_status == 0 ? '教师未评价' : '教师已评价'
           tempList.push(item)
         }
         this.setData({

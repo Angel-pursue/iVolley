@@ -115,12 +115,12 @@ Page({
             'content-type': 'application/x-www-form-urlencoded' //修改此处即可
           },
           data: {
-            "email": regEmail,
-            "password": regPassWord,
-            "name": name1,
-            "num": number, //学工号
-            "verification": captcha,
-            "role": logstaus //0学生，1老师
+            "email": this.regEmail,
+            "password": this.regPassWord,
+            "name": this.name1,
+            "num": this.number, //学工号
+            "verification": this.captcha,
+            "role": this.logstaus //0学生，1老师
           },
           method:'POST',
           success: function(res) {
@@ -191,6 +191,7 @@ Page({
         data: {
           "email": this.regEmail
         },
+        method:'POST',
         success: function(res) {
           console.log(res)
         }
