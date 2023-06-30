@@ -1,19 +1,60 @@
 // pages/teachers/teacher_home/teacher_class/teacher_class_task/teacher_class_task.js
+import {config} from '../../../../../config/index'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    ID: '',
     videoUrl: '',
-    imageUrl: '../../../../../images/qjnot.jpeg'
+    imageUrl: '',
+    AI_feedback: '暂无评价',
+    teacher_feedback: '暂无评价'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  bindFeedback: function(e) {
+    this.setData({teacher_feedback: e.detail.value})
+  },
 
+  onLoad(options) {
+    this.setData({
+      ID: options.ID
+    })
+
+    wx.request({
+      url: config.domain + 'get_video_profile/',
+      method: 'POST',
+      data: {
+        video_ID: this.data.ID
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: (res)=> {
+        console.log(res)
+        this.setData({
+          videoUrl: res.data.URL
+        })
+        if (res.data.AI_status == 1) {
+          this.setData({
+            AI_feedback: res.data.AI_feedback,
+            imageUrl: res.data.error_img
+          })
+        }
+        if (res.data.teacher_feedback == 1) {
+          this.setData({
+            AI_feedback: res.data.teacher_feedback
+          })
+        }
+      },
+      fail: (res)=> {
+        console.log(res)
+      }
+    })
   },
 
   /**

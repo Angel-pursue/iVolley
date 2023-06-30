@@ -1,5 +1,6 @@
 // index.js
 // 获取应用实例
+import {config} from '../../config/index'
 const app = getApp()
 
 Page({
@@ -43,6 +44,29 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  login() {
+    wx.request({
+          url: config.domain + 'login/',
+          method: 'POST',
+          data: {
+            email: '2267413596@qq.com',
+            password: '123456',
+            role: 1
+          },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          success: (res)=> {
+            wx.navigateTo({
+              url: '../teachers/teacher_home/teacher_home',
+            })
+              console.log(res)
+          },
+          fail: (res)=> {
+            console.log(res)
+          }
     })
   }
 })

@@ -3,6 +3,7 @@
   "backgroundTextStyle": "light",
   "component": true,
   "usingComponents": {
-    "t-image": "tdesign-miniprogram/image/image"
+    "t-image": "tdesign-miniprogram/image/image",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea"
   }
 }

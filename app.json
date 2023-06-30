@@ -1,17 +1,18 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/login/login",
+    "pages/teachers/teacher_home/teacher_home",
     "pages/personinfo/personinfo",
     "pages/video/video",
     "pages/videoPlayer/videoPlayer",
     "pages/showvideos/showvideos",
-    "pages/teachers/teacher_home/teacher_home",
     "pages/teachers/teacher_home/teacher_class/teacher_class",
     "pages/teachers/teacher_home/teacher_create_task/teacher_create_task",
     "pages/teachers/teacher_person_center/teacher_person_center",
-    "pages/index/index",
     "pages/logs/logs",
-    "pages/teachers/teacher_home/teacher_class/teacher_class_task/teacher_class_task"
+    "pages/teachers/teacher_home/teacher_class/teacher_class_task/teacher_class_task",
+    "pages/teachers/teacher_home/teacher_class/student_videoList/student_videoList"
   ],
   "window": {
     "backgroundTextStyle": "light",
