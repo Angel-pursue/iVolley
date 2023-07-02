@@ -12,6 +12,26 @@
   </view>
   <view class="video" style="margin-left: 15rpx; margin-right: 15rpx; margin-top: 20rpx;">
     <text style="font-size: 40rpx;">教师评价</text>
-    <t-textarea t-class="external-class" placeholder="请输入文字" bindchange="bindFeedback"  indicator default-value="{{teacher_feedback}}"/>
+    <view>
+      <text>{{teacher_feedback}}</text>
+    </view>
   </view>
+  <t-row>
+    <t-col>
+      <t-button bind:tap="onReview">编辑评价</t-button>
+    </t-col>
+    <t-col>
+      <t-button bind:tap="onReview" disabled="{{teacher_status == 0}}">发布评价</t-button>
+    </t-col>'
+  </t-row>
 </view>
+<t-dialog
+  visible="{{showWithInput}}"
+  title="带输入框对话框"
+  confirm-btn="确定"
+  cancel-btn="取消"
+  bind:confirm="dialogConfirm"
+  bind:cancel="dialogCancel"
+>
+<input bindinput="reviewInput"   placeholder="请输入评价" value="teacher_feedback"/>
+</t-dialog>

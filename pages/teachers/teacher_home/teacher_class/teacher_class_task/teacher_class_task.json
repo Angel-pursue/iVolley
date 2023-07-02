@@ -4,6 +4,9 @@
   "component": true,
   "usingComponents": {
     "t-image": "tdesign-miniprogram/image/image",
-    "t-textarea": "tdesign-miniprogram/textarea/textarea"
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-dialog": "tdesign-miniprogram/dialog/dialog",
+    "t-input": "tdesign-miniprogram/input/input"
   }
 }

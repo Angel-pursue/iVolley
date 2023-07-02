@@ -170,5 +170,13 @@ Page({
     // wx.reLaunch({
     //   url: '/pages/login/login',
     // })
-  }
+  },
+  onChangeBar(e) {
+    this.setData({
+      value: e.detail.value,
+    });
+    wx.redirectTo({
+      url: '../teacher_home/teacher_home',
+    })
+  },
 });

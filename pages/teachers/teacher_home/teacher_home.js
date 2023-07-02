@@ -10,21 +10,23 @@ Page({
     name: '彭',
     drawerVisible: false,
     placement: 'right',
-    sidebar: [
-      {
-        title: '发布作业',
-      },
-      {
-        title: '新建班级',
-      }
-    ],
-    semesterText: '',
-    semesterValue: [],
-    semesterVisible: false,
-    semesters: [
-      { label: '2023春', value: '2023春' },
-      { label: '2023秋', value: '2023秋' },
-    ],
+    product: {
+      value: '2023-1',
+      options: [
+        {
+          value: '2023-1',
+          label: '2023秋',
+        },
+        {
+          value: '2023-2',
+          label: '2023春',
+        },
+        {
+          value: '2023-3',
+          label: '2023夏',
+        },
+      ],
+    },
     value: 'label_1',
     list: [
       { value: 'label_1', label: '班级管理', icon: 'home' },
@@ -36,28 +38,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    const msg = '老师，您已成功登录'
-    Message.success({
-      context: this,
-      offset: [20, 32],
-      duration: 3000,
-      content: this.data.name + msg,
-      align: 'center'
-    });
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    wx.hideHomeButton();
   },
 
   /**
@@ -109,6 +102,9 @@ Page({
     this.setData({
       value: e.detail.value,
     });
+    wx.redirectTo({
+      url: '../teacher_person_center/teacher_person_center',
+    })
   },
 
   onColumnChange(e) {
@@ -127,28 +123,6 @@ Page({
     });
   },
 
-  onPickerCancel(e) {
-    const { key } = e.currentTarget.dataset;
-    console.log(e, '取消');
-    console.log('picker1 cancel:');
-    this.setData({
-      [`${key}Visible`]: false,
-    });
-  },
-
-  onDrawerDisplay(e) {
-    this.setData({
-      drawerVisible: true,
-    });
-  },
-
-  itemClick(e) {
-    console.log(e.detail);
-  },
-  overlayClick(e) {
-    console.log(e.detail);
-  },
-
   gotoClass() {
     console.log('gotoClass')
     wx.navigateTo({
@@ -156,30 +130,20 @@ Page({
     })
   },
 
-  upLoad() {
-    console.log('begin upload')
-    wx.chooseMedia({
-      count: 1,
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success: (res) => {
-        console.log(res);
-        const path = res.tempFiles[0].tempFilePath;
-        wx.uploadFile({
-          url: 'http://10.134.138.253:8002/iVolley_api/storage_view/', 
-          filePath: path,
-          name: "image",
-          formData: {
-          },
-          header: {
-            'content-type': 'multipart/form-data'
-          },
-          success (res){
-            console.log(res)
-          },
-          fail: (err) => console.log(err),
-      });
-    }
-  });
+  onChange(e) {
+    this.setData({
+      'product.value': e.detail.value,
+    });
+  },
+  newClass(e) {
+    const msg = "暂无此功能，后续或从教务处直接导入班级"
+    Message.warning({
+      context: this,
+      offset: [5, 22],
+      duration: 3000,
+      content: msg,
+      align: 'center'
+    });
   }
+
 })

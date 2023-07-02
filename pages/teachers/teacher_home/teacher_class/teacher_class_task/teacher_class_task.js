@@ -11,6 +11,9 @@ Page({
     imageUrl: '',
     AI_feedback: '暂无评价',
     teacher_feedback: '暂无评价',
+    teacher_status: 0,
+    showWithInput: false,
+
   },
 
   /**
@@ -42,7 +45,8 @@ Page({
         if (res.data.AI_status == 1) {
           this.setData({
             AI_feedback: res.data.AI_feedback,
-            imageUrl: res.data.error_img
+            imageUrl: res.data.error_img,
+            teacher_status: res.data.teacher_status
           })
         }
         if (res.data.teacher_feedback == 1) {
@@ -68,7 +72,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData({
+      teacher_feedback: '暂无评价'
+    })
   },
 
   /**
@@ -92,18 +98,28 @@ Page({
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  onReview() {
+    this.setData({
+      showWithInput: true
+    })
   },
   
+  dialogCancel() {
+    this.setData({
+      showWithInput: false
+    })
+  },
+
+  dialogConfirm() {
+    this.setData({
+      teacher_status: 1
+    })
+  },
+
+  reviewInput: function (e) {
+    //获取输入框输入的内容
+    this.setData({
+      teacher_feedback: e.detail.value
+    })
+  },
 })

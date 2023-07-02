@@ -79,7 +79,7 @@ Page({
             })
             console.log(that.logstaus)
             if (that.logstaus) {
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '../teachers/teacher_home/teacher_home',
               })
             }
