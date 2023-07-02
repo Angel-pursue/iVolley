@@ -22,10 +22,10 @@
       <icon type="success" color="#44ADFB" size="16"></icon>
       <input class="input" auto-focus placeholder="请输入登录密码" bindinput="getPassWord"/>
     </view>
-    <checkbox-group bindchange="HandelItemChange">
+    <radio-group bindchange="HandelItemChange">
       <checkbox class = "cb" value="student">学生</checkbox>
       <checkbox  class = "cb1" value="teacher">教师</checkbox>
-    </checkbox-group>
+    </radio-group>
     <view class="forget">
       <text>忘记密码?</text>
     </view>
@@ -57,10 +57,10 @@
       <icon type="success" color="#44ADFB" size="16"></icon>
       <input class="input" auto-focus placeholder="请确认密码" bindinput="getRegisiterConfirmPassWord"/>
     </view>
-    <checkbox-group bindchange="HandelItemChange">
+    <radio-group bindchange="HandelItemChange">
       <checkbox class = "cb" value="student">学生</checkbox>
       <checkbox  class = "cb1" value="teacher">教师</checkbox>
-    </checkbox-group>
+    </radio-group>
   </view>
   <view class="sumbit-btn">
     <button class="button" 
