@@ -1,5 +1,5 @@
 <!--pages/teachers/teacher_home/teacher_class/teacher_class_task/teacher_class_task.wxml-->
-<view class="root" style="background-color: rgb(236, 236, 236);">
+<view class="root" style="background-color: rgb(236, 236, 236); padding-bottom: 20rpx;">
   <view class="video" style="margin-left: 15rpx; margin-right: 15rpx; font-size: 40rpx;">
     <text >学生视频</text>
     <video bindplay= 'playVideo' bindpause='pauseVideo' src="{{videoUrl}}" binderror="error" style="width: 100%; margin-top: 15rpx" />
@@ -12,23 +12,25 @@
   </view>
   <view class="video" style="margin-left: 15rpx; margin-right: 15rpx; margin-top: 20rpx;">
     <text style="font-size: 40rpx;">教师评价</text>
-    <view>
+    <view style="margin-left: 10rpx;">
       <text>{{teacher_feedback}}</text>
     </view>
   </view>
-  <t-row>
-    <t-col>
+  <view style="margin: 10rpx;">
+    <t-row>
+    <t-col span="10" offset="2">
       <t-button bind:tap="onReview">编辑评价</t-button>
     </t-col>
-    <t-col>
+    <t-col span="10">
       <t-button bind:tap="addFeedback" disabled="{{teacher_status == 0}}">发布评价</t-button>
     </t-col>
   </t-row>
+  </view>
 </view>
 <t-dialog
   visible="{{showWithInput}}"
   title="带输入框对话框"
-  confirm-btn="确定"
+  confirm-btn="保存"
   cancel-btn="取消"
   bind:confirm="dialogConfirm"
   bind:cancel="dialogCancel"

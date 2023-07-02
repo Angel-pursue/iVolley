@@ -9,7 +9,6 @@
       <t-cell title="期中考试" hover  style="margin: 10rpx;" />
       <t-cell title="期末考试" hover  style="margin: 10rpx;" />
       <t-cell title="课下练习" hover  style="margin: 10rpx;" />
-      <t-cell title="自垫球" hover  style="margin: 10rpx;" bind:click="gotoTask" />
     </t-cell-group>
   </view>
   <view class="task" style="font-size: 35rpx;">
