@@ -21,8 +21,8 @@
       <t-button bind:tap="onReview">编辑评价</t-button>
     </t-col>
     <t-col>
-      <t-button bind:tap="onReview" disabled="{{teacher_status == 0}}">发布评价</t-button>
-    </t-col>'
+      <t-button bind:tap="addFeedback" disabled="{{teacher_status == 0}}">发布评价</t-button>
+    </t-col>
   </t-row>
 </view>
 <t-dialog
@@ -33,5 +33,12 @@
   bind:confirm="dialogConfirm"
   bind:cancel="dialogCancel"
 >
-<input bindinput="reviewInput"   placeholder="请输入评价" value="teacher_feedback"/>
+<t-input
+    borderless
+    class="dialog-input"
+    slot="content"
+    placeholder="请输入评价"
+    placeholder-class="placeholder"
+    bindchange="reviewInput"
+  />
 </t-dialog>

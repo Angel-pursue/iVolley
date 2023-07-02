@@ -1,5 +1,6 @@
 // pages/teachers/teacher_home/teacher_class/teacher_class_task/teacher_class_task.js
 import {config} from '../../../../../config/index'
+import Message from 'tdesign-miniprogram/message/index';
 Page({
 
   /**
@@ -49,9 +50,9 @@ Page({
             teacher_status: res.data.teacher_status
           })
         }
-        if (res.data.teacher_feedback == 1) {
+        if (res.data.teacher_status == 1) {
           this.setData({
-            AI_feedback: res.data.teacher_feedback
+            teacher_feedback: res.data.teacher_feedback
           })
         }
       },
@@ -112,14 +113,37 @@ Page({
 
   dialogConfirm() {
     this.setData({
-      teacher_status: 1
+      teacher_status: 1,
+      showWithInput: false
     })
   },
 
   reviewInput: function (e) {
-    //获取输入框输入的内容
     this.setData({
       teacher_feedback: e.detail.value
     })
   },
+
+  addFeedback() {
+    console.log(this.data.teacher_feedback)
+    wx.request({
+      url: config.domain + 'teacher_add_feedback/',
+      method: 'POST',
+      data: {
+        video_ID: this.data.ID,
+        feedback: this.data.teacher_feedback
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'Cookie': wx.getStorageSync('cookie')
+      },
+      success: (res)=> {
+        console.log(res)
+        Message.success('发布成功')
+      },
+      fail: (res)=> {
+        console.log(res)
+      }
+    })
+  }
 })

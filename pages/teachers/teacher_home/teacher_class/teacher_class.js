@@ -22,7 +22,8 @@ Page({
       data: {
       },
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'Cookie': wx.getStorageSync('cookie')
       },
       success: (res)=> {
         console.log(res)

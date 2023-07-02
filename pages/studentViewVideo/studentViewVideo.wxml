@@ -1,0 +1,19 @@
+<!--pages/teachers/teacher_home/teacher_class/teacher_class_task/teacher_class_task.wxml-->
+<view class="root" style="background-color: rgb(236, 236, 236);">
+  <view class="video" style="margin-left: 15rpx; margin-right: 15rpx; font-size: 40rpx;">
+    <text >学生视频</text>
+    <video bindplay= 'playVideo' bindpause='pauseVideo' src="{{videoUrl}}" binderror="error" style="width: 100%; margin-top: 15rpx" />
+  </view>
+  <view class="video" style="margin-left: 15rpx; margin-right: 15rpx; margin-top: 20rpx;">
+    <text style="font-size: 40rpx;">AI评价</text>
+    <image  wx:if="{{imageUrl != ''}}" src="{{imageUrl}}" style="width: 100%; margin-top: 15rpx" mode="aspectFit"/>
+    <view>{{AI_feedback}}
+    </view>
+  </view>
+  <view class="video" style="margin-left: 15rpx; margin-right: 15rpx; margin-top: 20rpx;">
+    <text style="font-size: 40rpx;">教师评价</text>
+    <view>
+      <text>{{teacher_feedback}}</text>
+    </view>
+  </view>
+</view>

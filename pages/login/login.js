@@ -77,10 +77,18 @@ Page({
               icon: 'success',
               title: '登录成功',
             })
+            if(res && res.header && res.header['Set-Cookie']){
+              wx.setStorageSync('cookieKey', res.header['Set-Cookie']);//保存Cookie到Storage
+            }
             console.log(that.logstaus)
             if (that.logstaus) {
               wx.redirectTo({
                 url: '../teachers/teacher_home/teacher_home',
+              })
+            }
+            else {
+              wx.redirectTo({
+                url: '../studentVideoList/studentVideoList',
               })
             }
           }

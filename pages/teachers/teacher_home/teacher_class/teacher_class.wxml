@@ -6,10 +6,17 @@
   <view class="task" style="font-size: 35rpx;">
     <text style="margin: 10rpx;">已发布作业</text>
     <t-cell-group theme="card">
-      <t-cell title="期中考试" hover arrow style="margin: 10rpx;" />
-      <t-cell title="期末考试" hover arrow style="margin: 10rpx;" />
-      <t-cell title="课下练习" hover arrow style="margin: 10rpx;" />
-      <t-cell title="自垫球" hover arrow style="margin: 10rpx;" bind:click="gotoTask" />
+      <t-cell title="期中考试" hover  style="margin: 10rpx;" />
+      <t-cell title="期末考试" hover  style="margin: 10rpx;" />
+      <t-cell title="课下练习" hover  style="margin: 10rpx;" />
+      <t-cell title="自垫球" hover  style="margin: 10rpx;" bind:click="gotoTask" />
+    </t-cell-group>
+  </view>
+  <view class="task" style="font-size: 35rpx;">
+    <text style="margin: 10rpx;">学生练习</text>
+    <t-cell-group theme="card">
+      <t-cell title="自垫球" hover arrow style="margin: 10rpx;" />
+      <t-cell title="对垫球" hover  style="margin: 10rpx;" />
     </t-cell-group>
   </view>
   <view class="divider-demo__title"></view>
