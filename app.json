@@ -12,7 +12,8 @@
     "pages/teachers/teacher_person_center/teacher_person_center",
     "pages/logs/logs",
     "pages/teachers/teacher_home/teacher_class/teacher_class_task/teacher_class_task",
-    "pages/teachers/teacher_home/teacher_class/student_videoList/student_videoList"
+    "pages/teachers/teacher_home/teacher_class/student_videoList/student_videoList",
+    "pages/student_home/student_home"
   ],
   "window": {
     "backgroundTextStyle": "light",

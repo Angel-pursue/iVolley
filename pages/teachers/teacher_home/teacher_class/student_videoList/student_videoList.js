@@ -7,7 +7,8 @@ Page({
    */
   data: {
     email: '',
-    videoList: []
+    videoList: [],
+    imgList: []
   },
 
   /**
@@ -40,6 +41,35 @@ Page({
         }
         this.setData({
           videoList: tempList
+        })
+      },
+      fail: (res)=> {
+        console.log(res)
+      }
+    })
+
+    wx.request({
+      url: config.domain + 'tea2stu2imgs/',
+      method: 'POST',
+      data: {
+        email: this.data.email
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: (res)=> {
+        console.log(res)
+        var tempList = []
+        for (var i = 0; i < res.data.imgs.length; i++) {
+          var item = res.data.imgs[i]
+          item.index = i
+          item.subtime = item.subtime.substring(0,10)
+          item.AI_status = item.AI_status == 0 ? 'AI检测中' : 'AI检测完成'
+          item.teacher_status = item.teacher_status == 0 ? '教师未评价' : '教师已评价'
+          tempList.push(item)
+        }
+        this.setData({
+          imgList: tempList
         })
       },
       fail: (res)=> {
@@ -101,7 +131,18 @@ Page({
     var {index} = currentTarget.dataset
     var ID = this.data.videoList[index].ID
     console.log(ID)
-    var url = '../teacher_class_task/teacher_class_task?ID=' + ID
+    var url = '../teacher_class_task/teacher_class_task?ID=' + ID +'&type=2'
+    console.log(url)
+    wx.navigateTo({
+      url: url
+    })
+  },
+
+  onClickImg({currentTarget}) {
+    var {index} = currentTarget.dataset
+    var ID = this.data.imgList[index].ID
+    console.log(ID)
+    var url = '../teacher_class_task/teacher_class_task?ID=' + ID + '&type=1'
     console.log(url)
     wx.navigateTo({
       url: url

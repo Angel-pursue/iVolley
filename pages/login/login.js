@@ -88,7 +88,7 @@ Page({
             }
             else {
               wx.redirectTo({
-                url: '../studentVideoList/studentVideoList',
+                url: '../student_home/student_home',
               })
             }
           }

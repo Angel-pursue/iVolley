@@ -1,7 +1,10 @@
-<button bindtap="chooseVideo">
+<button bindtap="chooseMedia" wx:if="{{type == 2}}">
   添加视频</button>
+<button bindtap="chooseMedia" wx:if="{{type == 1}}">
+  添加图片</button>
 <button bindtap="uploadvideo">确认上传</button>
 
-<block wx:if="{{src != ''}}">
+<block wx:if="{{src != '' && type == 2}}">
   <video src="{{src}}"></video>
 </block>
+<image  wx:if="{{src != '' && type == 1}}" src="{{src}}" style="width: 100%; margin-top: 15rpx" mode="aspectFit"/>
