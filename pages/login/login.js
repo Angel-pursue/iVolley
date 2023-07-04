@@ -132,6 +132,7 @@ Page({
           },
           method:'POST',
           success: function(res) {
+            console.log(res)
             var code = res.data.status;
             var error = res.data.error;
             if(code == 200) {
@@ -201,6 +202,9 @@ Page({
         },
         method:'POST',
         success: function(res) {
+          console.log(res)
+        },
+        fail: function(res) {
           console.log(res)
         }
       })
