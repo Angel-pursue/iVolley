@@ -1,13 +1,16 @@
 Page({
   data: {
     src: '',
-    type: ''  //1图片，0视频
+    type: -1  //1图片，0视频
   },
   onLoad(options) {
+    console.log("aaaa")
     console.log(options)
+    console.log(options.type)
     this.setData({
-      type: options.type
+      type: parseInt(options.type)
     })
+    console.log(this.data.type)
   },
   //选择视频
   chooseMedia: function() {
@@ -25,7 +28,7 @@ Page({
   uploadMedia: function() {
     var src = this.data.src;
     let cookie = wx.getStorageSync('cookieKey');
-    if (type == 1) {
+    if (this.data.type == 2) {
       wx.uploadFile({
         url: 'http://10.134.138.253:8002/iVolley_api/storage_video/', //服务器接口
         filePath: src,

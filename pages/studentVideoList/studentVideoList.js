@@ -150,7 +150,7 @@ Page({
     var {index} = currentTarget.dataset
     var ID = this.data.videoList[index].ID
     console.log(ID)
-    var url = '../studentViewVideo/studentViewVideo?ID=' + ID
+    var url = '../studentViewVideo/studentViewVideo?ID=' + ID + '&type=2'
     console.log(url)
     wx.navigateTo({
       url: url
@@ -159,6 +159,16 @@ Page({
   uploadVideo: function() {
     wx.navigateTo({
       url: '../video/video?type=2'
+    })
+  },
+  onClickImg({currentTarget}) {
+    var {index} = currentTarget.dataset
+    var ID = this.data.imgList[index].ID
+    console.log(ID)
+    var url = '../studentViewVideo/studentViewVideo?ID=' + ID + '&type=1'
+    console.log(url)
+    wx.navigateTo({
+      url: url
     })
   },
   uploadImage: function() {
