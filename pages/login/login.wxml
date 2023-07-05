@@ -20,7 +20,7 @@
     </view>
     <view class="wei-input">
       <icon type="success" color="#44ADFB" size="16"></icon>
-      <input class="input" auto-focus placeholder="请输入登录密码" bindinput="getPassWord"/>
+      <input class="input" auto-focus placeholder="请输入登录密码" password type="text" bindinput="getPassWord"/>
     </view>
     <radio-group bindchange="HandelItemChange">
       <checkbox class = "cb" value="student">学生</checkbox>
@@ -51,11 +51,11 @@
     </view>
     <view class="wei-input">
       <icon type="success" color="#44ADFB" size="16"></icon>
-      <input class="input" auto-focus placeholder="请输入密码" bindinput="getRegisiterPassWord"/>
+      <input class="input" auto-focus placeholder="请输入密码" password type="text" bindinput="getRegisiterPassWord"/>
     </view>
     <view class="wei-input">
       <icon type="success" color="#44ADFB" size="16"></icon>
-      <input class="input" auto-focus placeholder="请确认密码" bindinput="getRegisiterConfirmPassWord"/>
+      <input class="input" auto-focus placeholder="请确认密码" password type="text" bindinput="getRegisiterConfirmPassWord"/>
     </view>
     <radio-group bindchange="HandelItemChange">
       <checkbox class = "cb" value="student">学生</checkbox>

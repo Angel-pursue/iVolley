@@ -41,6 +41,9 @@ Page({
         },
         name: 'video',
         success: function(res) {
+          wx.redirectTo({
+            url: '../studentVideoList/studentVideoList',
+          })
           console.log(res)
         },
         fail: function() {
@@ -60,6 +63,9 @@ Page({
         },
         name: 'img',
         success: function(res) {
+          wx.redirectTo({
+            url: '../studentVideoList/studentVideoList',
+          })
           console.log(res)
         },
         fail: function() {
