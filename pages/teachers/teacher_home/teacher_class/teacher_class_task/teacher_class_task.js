@@ -161,36 +161,69 @@ Page({
 
   addFeedback() {
     console.log(this.data.teacher_feedback)
-    console.log(wx.getStorageSync('cookieKey'))
-    wx.request({
-      url: config.domain + 'teacher_add_feedback/',
-      method: 'POST',
-      data: {
-        video_ID: this.data.ID,
-        feedback: this.data.teacher_feedback
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded',
-        'Cookie': wx.getStorageSync('cookieKey')
-      },
-      success: (res)=> {
-        console.log(res)
-        Message.success({
-          context: this,
-          offset: [20, 32],
-          duration: 5000,
-          content: '发布成功',
-        });
-      },
-      fail: (res)=> {
-        console.log(res)
-        Message.error({
-          context: this,
-          offset: [20, 32],
-          duration: 5000,
-          content: '发布失败',
-        });
-      }
-    })
+    if (this.data.type == 2) {
+      wx.request({
+        url: config.domain + 'teacher_add_feedback/',
+        method: 'POST',
+        data: {
+          video_ID: this.data.ID,
+          feedback: this.data.teacher_feedback
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'Cookie': wx.getStorageSync('cookieKey')
+        },
+        success: (res)=> {
+          console.log(res)
+          Message.success({
+            context: this,
+            offset: [20, 32],
+            duration: 5000,
+            content: '发布成功',
+          });
+        },
+        fail: (res)=> {
+          console.log(res)
+          Message.error({
+            context: this,
+            offset: [20, 32],
+            duration: 5000,
+            content: '发布失败',
+          });
+        }
+      })
+    } else {
+      wx.request({
+        url: config.domain + 'teacher_add_imgfeedback/',
+        method: 'POST',
+        data: {
+          img_ID: this.data.ID,
+          feedback: this.data.teacher_feedback
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'Cookie': wx.getStorageSync('cookieKey')
+        },
+        success: (res)=> {
+          console.log(res)
+          Message.success({
+            context: this,
+            offset: [20, 32],
+            duration: 5000,
+            content: '发布成功',
+          });
+        },
+        fail: (res)=> {
+          console.log(res)
+          Message.error({
+            context: this,
+            offset: [20, 32],
+            duration: 5000,
+            content: '发布失败',
+          });
+        }
+      })
+    }
+    
   }
 })
