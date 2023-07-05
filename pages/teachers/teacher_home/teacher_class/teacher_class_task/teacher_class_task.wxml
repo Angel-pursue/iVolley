@@ -52,3 +52,4 @@
     bindchange="reviewInput"
   />
 </t-dialog>
+<t-message id="t-message" />

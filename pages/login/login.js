@@ -80,7 +80,7 @@ Page({
             if(res && res.header && res.header['Set-Cookie']){
               wx.setStorageSync('cookieKey', res.header['Set-Cookie']);//保存Cookie到Storage
             }
-            console.log(that.logstaus)
+            console.log(wx.getStorageSync('cookieKey'))
             if (that.logstaus) {
               wx.redirectTo({
                 url: '../teachers/teacher_home/teacher_home',

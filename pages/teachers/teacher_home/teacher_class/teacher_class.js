@@ -23,7 +23,7 @@ Page({
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',
-        'Cookie': wx.getStorageSync('cookie')
+        'Cookie': wx.getStorageSync('cookieKey')
       },
       success: (res)=> {
         console.log(res)

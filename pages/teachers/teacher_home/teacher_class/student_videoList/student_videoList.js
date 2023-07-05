@@ -14,10 +14,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-    this.setData({
-      email: options.email
-    })
+  onShow() {
 
     wx.request({
       url: config.domain + 'tea2stu2videos/',
@@ -88,8 +85,10 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {
-
+  onLoad(options) {
+    this.setData({
+      email: options.email
+    })
   },
 
   /**

@@ -161,6 +161,7 @@ Page({
 
   addFeedback() {
     console.log(this.data.teacher_feedback)
+    console.log(wx.getStorageSync('cookieKey'))
     wx.request({
       url: config.domain + 'teacher_add_feedback/',
       method: 'POST',
@@ -170,14 +171,25 @@ Page({
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',
-        'Cookie': wx.getStorageSync('cookie')
+        'Cookie': wx.getStorageSync('cookieKey')
       },
       success: (res)=> {
         console.log(res)
-        Message.success('发布成功')
+        Message.success({
+          context: this,
+          offset: [20, 32],
+          duration: 5000,
+          content: '发布成功',
+        });
       },
       fail: (res)=> {
         console.log(res)
+        Message.error({
+          context: this,
+          offset: [20, 32],
+          duration: 5000,
+          content: '发布失败',
+        });
       }
     })
   }
