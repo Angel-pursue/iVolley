@@ -14,7 +14,8 @@ Page({
     teacher_feedback: '暂无评价',
     teacher_status: 0,
     showWithInput: false,
-    type: 1
+    type: 1,
+    error_img: ''
   },
 
   /**
@@ -48,9 +49,13 @@ Page({
           if (res.data.AI_status == 1) {
             this.setData({
               AI_feedback: res.data.AI_feedback,
-              imageUrl: res.data.error_img,
               teacher_status: res.data.teacher_status
             })
+            if (res.data.error_img != null) {
+              this.setData({
+                error_img: res.data.error_img
+              })
+            } 
           }
           if (res.data.teacher_status == 1) {
             this.setData({

@@ -14,7 +14,8 @@
     <!-- <view wx:for="{{imgList}}" wx:for-item="item" wx:for-index="index">
       <image src="{{item.}}" style="width: 100%; margin-top: 15rpx" mode="aspectFit"/>
     </view> -->
-      <image wx:if="{{imageUrl != '' && type == 2}}" src="{{imageUrl}}" style="width: 100%; margin-top: 15rpx" mode="aspectFit"/>
+      <image wx:if="{{error_img != ''}}" src="{{error_img}}" style="width: 100%; margin-top: 15rpx" mode="aspectFit"/>
+      <image wx:if="{{error_img == '' && type == 1}}" src="{{videoUrl}}" style="width: 100%; margin-top: 15rpx" mode="aspectFit"/>
     <view>{{AI_feedback}}
     </view>
   </view>
