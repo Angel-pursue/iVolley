@@ -78,6 +78,7 @@ Page({
               title: '登录成功',
             })
             if(res && res.header && res.header['Set-Cookie']){
+              wx.clearStorageSync()
               wx.setStorageSync('cookieKey', res.header['Set-Cookie']);//保存Cookie到Storage
             }
             console.log(wx.getStorageSync('cookieKey'))
