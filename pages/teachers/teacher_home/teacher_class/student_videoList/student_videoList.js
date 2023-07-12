@@ -8,7 +8,14 @@ Page({
   data: {
     email: '',
     videoList: [],
-    imgList: []
+    imgList: [],
+    enable: false,
+    loadingProps: {
+      size: '50rpx',
+    },
+    rowCol1: [{ width: '100%', height: '342rpx', borderRadius: '24rpx' }],
+    rowCol2: [[{ width: '327rpx' }], [{ width: '200rpx' }], [{ size: '327rpx', borderRadius: '24rpx' }]],
+    backTopVisible: false,
   },
 
   /**
@@ -146,5 +153,74 @@ Page({
     wx.navigateTo({
       url: url
     })
-  }
+  },
+  
+  onRefresh() {
+    this.setData({ enable: true });
+    wx.request({
+      url: config.domain + 'tea2stu2videos/',
+      method: 'POST',
+      data: {
+        email: this.data.email
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: (res)=> {
+        console.log(res)
+        var tempList = []
+        for (var i = 0; i < res.data.videos.length; i++) {
+          var item = res.data.videos[i]
+          item.index = i
+          item.subtime = item.subtime.substring(0,10)
+          item.AI_status = item.AI_status == 0 ? 'AI检测中' : 'AI检测完成'
+          item.teacher_status = item.teacher_status == 0 ? '教师未评价' : '教师已评价'
+          tempList.push(item)
+        }
+        this.setData({
+          videoList: tempList
+        })
+      },
+      fail: (res)=> {
+        console.log(res)
+      }
+    })
+
+    wx.request({
+      url: config.domain + 'tea2stu2imgs/',
+      method: 'POST',
+      data: {
+        email: this.data.email
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: (res)=> {
+        console.log(res)
+        var tempList = []
+        for (var i = 0; i < res.data.imgs.length; i++) {
+          var item = res.data.imgs[i]
+          item.index = i
+          item.subtime = item.subtime.substring(0,10)
+          item.AI_status = item.AI_status == 0 ? 'AI检测中' : 'AI检测完成'
+          item.teacher_status = item.teacher_status == 0 ? '教师未评价' : '教师已评价'
+          tempList.push(item)
+        }
+        this.setData({
+          imgList: tempList
+        })
+      },
+      fail: (res)=> {
+        console.log(res)
+      }
+    })
+    this.setData({ enable: false })
+  },
+  onScroll(e) {
+    const { scrollTop } = e.detail;
+
+    this.setData({
+      backTopVisible: scrollTop > 100,
+    });
+  },
 })

@@ -1,5 +1,5 @@
 <view >
-  <text style="margin: 10rpx; font-size: 40rpx;">视频列表</text>
+  <text style="margin: 10rpx; font-size: 40rpx;" wx:if="{{videoList.length > 0}}">视频列表</text>
   <view wx:for="{{videoList}}" wx:for-item="item" wx:for-index="index">
       <t-cell hover bind:click="onClickVideo" data-index="{{item.index}}" id='cell{{item.index}}' title="{{item.name}}" note="{{item.subtime}}" description="{{item.AI_status + ' ' + item.teacher_status}}" arrow
       style=" margin-bottom: 10rpx; border-color:#000">
