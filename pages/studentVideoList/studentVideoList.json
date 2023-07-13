@@ -2,8 +2,10 @@
   "navigationBarTitleText": "iVolley",
   "backgroundTextStyle": "light",
   "component": true,
+  "disableScroll": true,
   "usingComponents": {
     "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
-    "t-cell": "tdesign-miniprogram/cell/cell"
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-pull-down-refresh": "tdesign-miniprogram/pull-down-refresh/pull-down-refresh"
   }
 }

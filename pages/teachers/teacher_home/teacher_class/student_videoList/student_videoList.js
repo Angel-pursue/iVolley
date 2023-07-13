@@ -214,7 +214,9 @@ Page({
         console.log(res)
       }
     })
-    this.setData({ enable: false })
+    setTimeout(() => {
+      this.setData({ enable: false });
+    }, 500);
   },
   onScroll(e) {
     const { scrollTop } = e.detail;
